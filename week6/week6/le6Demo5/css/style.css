@@ -17,3 +17,10 @@ td,th{
 table{
     border-collapse: collapse;
 }
+
+.newClass{
+    font-size: 2em;
+    font-weight: bold;
+    color: green;
+    background-color: cyan;
+}

@@ -1,9 +1,18 @@
 
 
+onload = function(){
+    document.querySelector("#mybutton1").onclick = buildParagraph
+    document.querySelector("#mybutton2").onclick = buildSection 
+    document.querySelector("#mybutton3").onclick = buildBigSection 
+}
+
+function buildParagraph(){
+    let str = "<p> First Paragraph </p>"
+    document.querySelector("#placeHolder1").innerHTML = str
+}
 
 
 
-/*
 function buildSection() {
     let str = "";
     str = "<section id='newSection'>"
@@ -13,9 +22,9 @@ function buildSection() {
     let elem = document.querySelector("#placeHolder2");
     elem.innerHTML = str;
 }
-*/
 
-/*
+
+
 function buildBigSection() {
     let str = "";
     let counter = 0;
@@ -31,4 +40,3 @@ function buildBigSection() {
     elem.innerHTML = str;
 }
 
-*/
