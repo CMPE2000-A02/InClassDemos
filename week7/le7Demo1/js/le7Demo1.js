@@ -6,15 +6,15 @@
 //We first register the different event handlers
 onload = function () {
 
-    //binding the different event handlers to the respective events
-   //   document.querySelector("#displayDrinkBtn").onclick = displayDrinkStall;
-   //   document.querySelector("#chosenRadioBtn").onclick = displayChosenRadio;
-   //   document.querySelector("#nonChosenRadioBtn").onclick = displayNonChosenRadio;
-  //    document.querySelector("#displayContactBtn").onclick = displayContactMethods;
-  //    document.querySelector("#Grade").onchange = displayGradeMessage;
- //     document.querySelector("#uncheckRadioBtn").onclick = uncheckRadioButtons;
-  //    document.querySelector("#uncheckCheckBoxesBtn").onclick = uncheckCheckboxes;
-  //    document.querySelector("#checkOptionsBtn").onclick = checkOptions;
+    // binding the different event handlers to the respective events
+     document.querySelector("#displayDrinkBtn").onclick = displayDrinkStall;
+     document.querySelector("#chosenRadioBtn").onclick = displayChosenRadio;
+     document.querySelector("#nonChosenRadioBtn").onclick = displayNonChosenRadio;
+     document.querySelector("#displayContactBtn").onclick = displayContactMethods;
+     document.querySelector("#Grade").onchange = displayGradeMessage;
+     document.querySelector("#uncheckRadioBtn").onclick = uncheckRadioButtons;
+     document.querySelector("#uncheckCheckBoxesBtn").onclick = uncheckCheckboxes;
+     document.querySelector("#checkOptionsBtn").onclick = checkOptions;
 }
 
 
@@ -23,7 +23,7 @@ named "drink". It checks which one of the buttons
 is checked (through the value assigned to the name "drink") 
 and accordingly places a message in the output element of the form*/
 
-/*
+
 function displayDrinkStall() {
     let chosenDrink = document.querySelector(".radio1:checked");
     let message;
@@ -37,7 +37,7 @@ function displayDrinkStall() {
     }
     document.querySelector("#drinkStall").innerHTML = message;
 }
-*/
+
 
 
 /*The function displayChosenButton() treats the
@@ -47,22 +47,23 @@ function displayDrinkStall() {
   it in the ouput element named "chosenRadioButton"
 */
 
-/*
+
 function displayChosenRadio() {
-    let drinks = document.querySelectorAll("[name=drink]");
-    let message = "The chosen radio buton is: ";
+    //let drinks = document.querySelectorAll("[name=drink]");
+    let drinks = document.querySelectorAll(".radio1")
+    let message = "The chosen radio buton is: "
    
     for (count = 0; count < drinks.length; count++) {
         if (drinks[count].checked)
-            message = drinks[count].value + " was chosen";
+            message += drinks[count].value + " was chosen"
     }
-    document.querySelector("#chosenRadioDisplay").innerHTML = message;
+    document.querySelector("#chosenRadioDisplay").innerHTML = message
 
 }
-*/
 
 
-/*
+
+
 function displayNonChosenRadio() {
     console.log("Enetered event listener");
     let nonChosenDrinks = document.querySelectorAll("[name=drink]:not(:checked)");
@@ -74,9 +75,9 @@ function displayNonChosenRadio() {
     document.querySelector("#nonChosenRadioDisplay").innerHTML = message;
 
 }
-*/
 
-/*
+
+
 
 function displayContactMethods() {
     let contactMethods = document.querySelectorAll(".ckBox1:checked");
@@ -86,27 +87,34 @@ function displayContactMethods() {
 
     document.querySelector("#contactMethods").innerHTML = message;
 }
-*/
-/*
+
+
 function uncheckRadioButtons() {
     var drinks = document.querySelectorAll(".radio1");
     for (count = 0; count < drinks.length; count++)
         drinks[count].checked = false;
+    //drinks.forEach(UncheckElement)
+    drinks.forEach((item, index)=>{
+        item.checked = false
+        console.log("Index: " + index)
+    })
 }
-*/
 
-/*
+function UncheckElement(item){
+    item.checked = false
+}
+
+
+
 function uncheckCheckboxes() {
     var contactMethods = document.querySelectorAll(".ckBox1");
     for (count = 0; count < contactMethods.length; count++)
         contactMethods[count].checked = false;
+    //contactMethods.forEach(UncheckElement)
 }
-*/
 
-/*
+
 function displayGradeMessage() {
-
-
     let message;
     switch (this.value) {
         case 'A': message = 'Well Above Average';
@@ -124,9 +132,8 @@ function displayGradeMessage() {
     }
     document.querySelector("#gradeOutput").innerHTML = message;
 }
-*/
 
-/*
+
 
 function checkOptions() {
     var drinks = document.querySelectorAll(".radio1");
@@ -137,4 +144,3 @@ function checkOptions() {
 
 }
 
-*/

@@ -6,8 +6,11 @@
   
   */
 
+onload = () => {
+  document.querySelector("#form1").onsubmit = FormValidation
+}
 
-function validate() {
+function FormValidation() {
   alert("Hi!- Performing Form Validation");
   var elem = document.querySelector("[name=firstName]");
   if (elem.value == "") {

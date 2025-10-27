@@ -8,10 +8,9 @@
 */
 
 onload = () => {
-  /*
         document.querySelector("#adjustImage").onclick = adjustImageHeight;
         document.querySelector("#addPicBtn").onclick = addPicture;
-        */
+   
 }
 
 
@@ -20,7 +19,6 @@ onload = () => {
   to be the same as that of the element with id 
 */
 
-/*
 function adjustImageHeight() {
     let elem = document.querySelector("#country");
     let elemStyle = window.getComputedStyle(elem);
@@ -28,14 +26,11 @@ function adjustImageHeight() {
     let myImage = document.querySelector("#myPic");
     myImage.setAttribute("height", elemHeight);
 }
-*/
 
 /*This function adds a picture to an image element by setting its src attribute*/
-/*
 function addPicture() {
     let myImage = document.querySelector("#pic2");
    // myImage.setAttribute("src", "images/AmericanNaked.jpg");
    myImage.src= "images/AmericanNaked.jpg";
 }
 
-*/
