@@ -92,6 +92,7 @@ function getPokemon() {
     let pokeInput = $("#pokemonName").val()
     if (pokeInput.length < 0)
         return
+    
     callAjax(`https://pokeapi.co/api/v2/pokemon/${pokeInput}`, null, "GET", "json", handlePokemonFetch, handlePokeError)
 }
 
@@ -107,7 +108,7 @@ function callAjax(url, data, type, datatype, successCallback, errorCallback) {
     options['url'] = url
     options['data'] = data
     options['type'] = type
-    options['datatype'] = datatype
+    options['dataType'] = datatype
     options['success'] = successCallback
     options['error'] = errorCallback
 
