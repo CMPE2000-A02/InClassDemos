@@ -29,17 +29,24 @@ $(() => {
     
     // ------ FOR LAB 3 -----------
     callAjax(
-        "https://thor.cnt.sast.ca/~aulakhha/filesAssLab/lab3.php", 
-        { "action": "propertyPrices" }, 
-        "POST", 
-        JSON, 
-        handleTest, 
+        "https://thor.cnt.sast.ca/~aulakhha/filesAssLab/lab3.php",
+        { "action": "propertyPrices" },
+        "POST",
+        'json', // THis needs to be of type string
+        handleTest,
         handleTestError
     )
-    callAjax("https://thor.cnt.sast.ca/~aulakhha/filesAssLab/lab3.php", { "action": "diceroll" }, "POST", JSON, handleTest, handleTestError)
+    callAjax(
+        "https://thor.cnt.sast.ca/~aulakhha/filesAssLab/lab3.php",
+        { "action": "diceroll" },
+        "POST",
+        'json', // Needs to be of type string
+        handleTestDice,
+        handleTestError
+    )
     $("#getPokemon").click(getPokemon)
     $("#playPokemon").click(startPokemonTimer)
-    
+
 })
 /// Handling DropDown (SELECT element) change event
 function handleDropdownChange(){
@@ -64,7 +71,7 @@ function handleRadioChange(){
     displayArray = []
     pokeArray.forEach((item)=>{
         console.log(item)
-        if(item.type == type.toLowerCase())
+        if(item.type == type.toLower())
             displayArray.push(item)
     })
     console.log("Display array: ")
@@ -101,6 +108,10 @@ function handleTestError(data) {
 }
 function handleTest(data) {
     console.log(data)
+}
+function handleTestDice(data) {
+    console.log(data)
+    console.log(data.dice2)
 }
 
 function callAjax(url, data, type, datatype, successCallback, errorCallback) {
