@@ -119,7 +119,7 @@ function callAjax(url, data, type, datatype, successCallback, errorCallback) {
     options['url'] = url
     options['data'] = data
     options['type'] = type
-    options['dataType'] = datatype
+    options['dataType'] = datatype // dateType <= needs to be capital T for Type
     options['success'] = successCallback
     options['error'] = errorCallback
 
